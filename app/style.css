@@ -1,0 +1,267 @@
+/* Indonesia in Numbers — original design.
+   Warm paper, deep navy ink, teal and amber accents. System fonts only:
+   nothing on this page loads from another origin. */
+
+:root {
+  --paper: #f7f4ee;
+  --card: #fffdf8;
+  --ink: #1b2a41;
+  --ink-soft: #43536a;
+  --muted: #6b7a8a;
+  --line: #ddd5c6;
+  --teal: #0e7c7b;
+  --teal-dark: #0a5e5d;
+  --amber: #d9930d;
+  --red: #b3402e;
+  --shadow: 0 1px 3px rgba(27, 42, 65, 0.10);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+a { color: var(--teal-dark); }
+
+/* ------------------------------------------------------------ header */
+.site-header {
+  background: var(--ink);
+  color: #f7f4ee;
+  padding: 14px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 28px;
+}
+
+.wordmark {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #f7f4ee;
+  text-decoration: none;
+}
+
+.wordmark em { color: #e8b34a; font-style: normal; }
+
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin-left: auto;
+}
+
+.site-header nav a {
+  color: #c9d4de;
+  text-decoration: none;
+  font-size: 14.5px;
+  padding: 4px 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.site-header nav a:hover { color: #ffffff; }
+.site-header nav a.active { color: #ffffff; border-bottom-color: var(--amber); }
+
+/* -------------------------------------------------------------- main */
+main {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  line-height: 1.15;
+  margin: 6px 0 10px;
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  margin: 0 0 12px;
+}
+
+.intro {
+  font-size: 17.5px;
+  color: var(--ink-soft);
+  max-width: 72ch;
+  margin: 0 0 8px;
+}
+
+.hero { margin-bottom: 22px; }
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  font-size: 12.5px;
+  color: var(--teal-dark);
+  font-weight: 700;
+  margin: 0;
+}
+
+/* -------------------------------------------------------------- cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 18px;
+  box-shadow: var(--shadow);
+}
+
+.card-label {
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.card-big {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.card-sub { font-size: 13.5px; color: var(--ink-soft); margin-top: 6px; }
+
+/* ------------------------------------------------------------ panels */
+.panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px 22px;
+  margin: 16px 0;
+  box-shadow: var(--shadow);
+}
+
+.panels .panel { margin: 0; }
+
+/* ------------------------------------------------------------ controls */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 14px 0 4px;
+}
+
+.controls-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-right: 4px;
+}
+
+.pill {
+  font: inherit;
+  font-size: 13.5px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.pill:hover { border-color: var(--teal); }
+.pill.on { background: var(--teal); border-color: var(--teal); color: #fff; }
+
+select {
+  font: inherit;
+  font-size: 14.5px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+}
+
+/* ------------------------------------------------------------- charts */
+.chart { width: 100%; height: auto; display: block; }
+.chart .grid { stroke: #e5ded0; stroke-width: 1; }
+.chart .tick { font-size: 11px; fill: var(--muted); font-family: system-ui, sans-serif; }
+.chart .tick.strong { font-weight: 700; fill: var(--ink); }
+
+.chart-note { font-size: 13.5px; color: var(--muted); margin: 6px 0 0; }
+.source { font-size: 12.5px; color: var(--muted); margin: 12px 0 0; }
+.note {
+  background: #fdf3d8;
+  border-left: 4px solid var(--amber);
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  font-size: 14.5px;
+  margin: 18px 0;
+}
+
+/* ------------------------------------------------------------- tables */
+table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--line); }
+th { font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); }
+td:last-child, th:last-child { text-align: right; }
+th.sortable { cursor: pointer; }
+th.sortable:hover { color: var(--teal-dark); }
+
+/* ------------------------------------------------------ topic links */
+.topics { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.topics a {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--paper);
+}
+.topics a:hover { border-color: var(--teal); }
+.topics a strong { display: block; font-family: Georgia, serif; font-size: 18px; margin-bottom: 2px; }
+.topics a span { font-size: 13.5px; color: var(--ink-soft); }
+
+/* ------------------------------------------------------------- footer */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 20px;
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 1020px;
+  margin: 0 auto 30px;
+}
+.site-footer p { margin: 4px 0; max-width: 78ch; }
+
+/* ------------------------------------------------------------ responsive */
+@media (max-width: 720px) {
+  h1 { font-size: 27px; }
+  .cards { grid-template-columns: 1fr 1fr; }
+  .panels { grid-template-columns: 1fr; }
+  .topics { grid-template-columns: 1fr; }
+  .card-big { font-size: 26px; }
+  .site-header nav { margin-left: 0; }
+}
+
+@media (max-width: 460px) {
+  .cards { grid-template-columns: 1fr; }
+  main { padding: 20px 14px 30px; }
+}
